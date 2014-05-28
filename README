@@ -1,0 +1,21 @@
+-----------  Tema 2 - SO  -----------
+-----------  ./mini-shell -----------
+
+Student: Ciobanu Alin Emanuel
+Grupa: 332 CC
+Sistem de operare folosit: Linux Mint 15
+Timp efectiv acordat rezolvarii: ~8 ore
+
+Explicatii si implementare
+------------------------------------
+Am pornit de la parserul oferit de voi. Am invatat sa-l folosesc si apoi am inceput sa implementez.
+Cea mai importanta functie din tema e run_simple_command. Am implementat-o ca in laboratorul 3. fork si exec.
+Pe baza acestei comenzi, celelalte comenzi apeleaza recursiv run_command pana ajung la comanda simpla si o executa.
+Pentru paralel, am facut fork si in copil am executat prima comanda, iar in parinte am executat a doua comanda.
+Pentru pipe, am creat pipe-urile in parinte, apoi am facut fork. In copil am executat comanda 1, iar in parinte comanda 2. In copil am inchis capatul de citire,
+iar in parinte am inchis capatul de scriere al pipe-ului. Am facut dup2 pentru a redirecta pipe-ul catre stdout/stdin.
+
+Feedback
+------------------------------------
+Parser foarte bun. Era criminal daca am fi fost nevoiti sa ne parsam noi comenzile si nu acesta era scopul temei. Un mare plus pentru structura scheletului.
+
